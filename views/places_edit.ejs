@@ -1,0 +1,30 @@
+<!-- views/cars_edit.ejs -->
+<!-- RECEIVES: oneCar [a single car object] + brands [array of brand objects] -->
+<%- include("partial_headers.ejs"); %>
+ 
+<h1>Add an place:</h1>
+
+<!-- body-parser ==> we cannot use multipart/form-data ==> no file uploads -->
+
+<form class="add" action='/place/update-place/' method='post' 
+            enctype='application/x-www-form-urlencoded'>
+    <table class="table table-hover" >            
+        
+        <tr><td>Name:</td>
+            <td><input type='text' name='Name_place' value='<%= onePlace.Name_place %>' /></td></tr>
+        <tr><td>Address:</td>
+            <td><input type='text' name='Address' value='<%= onePlace.Address %>' /></td></tr>
+        <tr><td>City:</td>
+            <td><input type='text' name='City' value='<%= onePlace.City %>' /></td></tr>
+        <tr><td>Transport:</td>
+            <td><input type='text' name='Transport' value='<%= onePlace.Transport %>' /></td></tr>
+        <tr><td>Outside:</td>
+            <td><input type='checkbox' name='Outside' value='1' <%- onePlace.Outside ? "checked='checked'" : "" %> /></td></tr>
+        <tr><td>Image:</td>
+            <td><input type='text' name='Image' value='<%= onePlace.Image %>' /></td></tr>
+        <tr><td colspan='2'> <input class="btn btn-light btn-block" type='submit' value='SEND' /> </td></tr>
+    </table>
+</form>
+
+
+<%- include("partial_footers.ejs"); %>

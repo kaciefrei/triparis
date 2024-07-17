@@ -1,0 +1,203 @@
+<!-- views/cars_list.ejs  -->
+<!-- RECEIVES: cars [an array of car objects] + flashMessage [string, the error message] -->
+<%- include("partial_headers.ejs"); %>
+
+<link rel="stylesheet" href="/static/menu.css">
+
+
+
+<link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/blog/">
+
+<!-- Bootstrap core CSS -->
+<link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="/docs/5.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+<!-- Custom styles for this template -->
+<link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
+<link href="blog.css" rel="stylesheet">
+<link href="carousel.css" rel="stylesheet">
+
+
+<style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
+
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
+
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
+
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
+
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
+</head>
+
+<body>
+  <main>
+  
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+  
+    <div class="container marketing" style="text-align:center;">
+  
+      <!-- Three columns of text below the carousel -->
+      <div class="row">
+        <div class="col-lg-4">
+          <img src="https://www.famille-magazine.fr/files/2012/10/Pique-nique-en-famille.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+  
+          <h2 class="fw-normal">Activities</h2>
+          <p>Nothing to do? Come take a look at our list of activities. There is a lot of possibilities and for everyone!</p>
+          <p><a class="btn btn-secondary" href="/excursion/activity" style="background-color: blue;">View List &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="https://medias.monuments-nationaux.fr/var/cmn_inter/storage/images/mediatheque/mediatheque-commune/photo-1-visite-a-distance626/109587821-1-fre-FR/Photo-1-visite-a-distance626.png" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>  
+          <h2 class="fw-normal">Visits</h2>
+          <p>Too much things to visit in Paris right? Here we come to help you! We regrouped all the visits for you,so come make your choice.</p>
+          <p><a class="btn btn-secondary" href="/excursion/visit" style="background-color: blue;">View List &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+        <div class="col-lg-4">
+          <img src="https://www.brest.fr/fileadmin/imported_for_brest/fileadmin/Images/Au_quotidien/Agir_pour_l_environnement/Espaces_verts/pres_de_chez_vous/circuits_balades/balades_couv_legall.jpg" class="bd-placeholder-img rounded-circle" width="140" height="140" role="img" aria-label="Placeholder: 140x140" preserveAspectRatio="xMidYMid slice" focusable="false"></img>
+  
+          <h2 class="fw-normal">Walks</h2>
+          <p>Need to take a break? Or you just want to take some rest? We have a large choice of place to walk for you so come make your choice</p>
+          <p><a class="btn btn-secondary" href="/excursion/walk" style="background-color:blue;">View List &raquo;</a></p>
+        </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
+  
+    </div><!-- /.container -->
+    </main>
+
+
+
+<div class='wrapper'>
+    <div class='carousel'>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            👨
+        </div>
+        <div class='carousel__item-body'>
+          <p class='title'>Charles ⭐⭐</p>
+          <p>Triparis allowed me to organise an incredible trip! Unfortunately, my phone was stolen in the metro... I lost all my photos!</p>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            👱‍♀️ 
+        </div>
+        <div class='carousel__item-body'>
+          <p class='title'>Emmy ⭐⭐⭐⭐⭐</p>
+          <p>Thanks to Triparis, I was able to discover many activities in Paris, my children loved it!</p>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            🧑🏽
+        </div>
+        <div class='carousel__item-body'>
+          <p class='title'>Daniel ⭐⭐⭐⭐</p>
+          <p>Even though it rained, I was able to visit some wonderful museums thanks to Triparis. Wonderful!</p>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            👩‍🦱
+        </div>
+        <div class='carousel__item-body'>
+          <p class='title'>Annabelle ⭐⭐⭐</p>
+          <p>My husband and I discovered this beautiful city. This website is perfect for not wasting time during our travels.</p>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            🧔🏼
+        </div>
+        <div class='carousel__item-body'>
+          <p class='title'>Connor ⭐⭐⭐⭐⭐</p>
+          <p>Paris is a city with wonderful restaurants. I was able to taste the best French gastronomy! Thank you Triparis :)</p>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            👨
+        </div>
+        <div class='carousel__item-body'>
+          <p class='title'>Charles ⭐⭐</p>
+          <p>Triparis allowed me to organise an incredible trip! Unfortunately, my phone was stolen in the metro... I lost all my photos!</p>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            👱‍♀️
+        </div>
+        <div class='carousel__item-body'>
+          <p class='title'>Emmy ⭐⭐⭐⭐⭐</p>
+          <p>Thanks to Triparis, I was able to discover many activities in Paris, my children loved it!</p>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            🧑🏽
+        </div>
+        <div class='carousel__item-body'>
+          <p class='title'>Daniel ⭐⭐⭐⭐</p>
+          <p>Even though it rained, I was able to visit some wonderful museums thanks to Triparis. Wonderful!</p>
+        </div>
+      </div>
+      <div class='carousel__item'>
+        <div class='carousel__item-head'>
+            👩‍🦱
+        </div>
+        <div class='carousel__item-body'>
+          <p class='title'>Annabelle ⭐⭐⭐</p>
+          <p>My husband and I discovered this beautiful city. This website is perfect for not wasting time during our travels.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+<%- include("partial_footers.ejs"); %>
+
+

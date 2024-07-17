@@ -1,0 +1,50 @@
+<!-- views/cars_list.ejs -->
+<!-- RECEIVES: cars [an array of car objects] + flashMessage [string, the error message] -->
+<%- include("partial_headers.ejs"); %>
+ 
+<h1>List of Places</h1>
+<% if (flashMessage) { %>
+    <p style='color:red'><%= flashMessage %></p>
+<% } %>
+
+
+<main>
+
+    <div class="album py-5 bg-light">
+      <div class="container">
+  
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+            <% for (var p of place) { %>
+                <div class="col">
+                    <div class="card shadow-sm">
+                    <h3><%= p.Name_place %></h3>
+                    <img src="<%= p.Image %>" style="width: 34%, text-align= center">
+                
+                    <div class="card-body">
+                        <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                            <a href=""><button type="button" class="btn btn-sm btn-success">View excursion</button></a>
+                            &ensp;
+
+                            <a href='/place/edit-place/<%= p.Place_id %>'><button type="button" class="binbutton3">✏️</button></a>
+                            &ensp;
+                            
+                            <a href='/place/del-place/<%= p.Place_id %>'><button type="button" class="binbutton2">🗑️</button></a>
+                        </div>
+                        <small class="text" style="font-weight: bold;"><%= p.Transport %></small>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            <% } %>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<%- include("partial_footers.ejs"); %>
+
+
+

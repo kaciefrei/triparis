@@ -1,0 +1,49 @@
+<!-- views/cars_show.ejs  -->
+<!-- RECEIVES: oneCar [a single car object] -->
+<!-- display in a secure way: every active content is ESCAPED (as HTML entities...) -->
+<!-- Security problems: SQL Injection, XSS Cross Site Scripting  -->
+<%- include("partial_headers.ejs"); %>
+
+<h1>Single car Datasheet</h1>
+
+<p><a href='/excursion/list'>Back to the list</a></p>
+
+
+<main>
+
+
+    <div class="container" style="display: flex; justify-content: center">
+    
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3" style="width: 54%; display: flex; justify-content: center">
+    
+    <?php foreach($Excursions as $excursion){ if($excursion->Place_id == $Place_id){ ?> 
+            <div class="col-md-8">
+                <div class="card shadow-sm" >
+                    <h3 align="center"><?= $excursion->Name ?></h3>
+                    <img src="<?= $excursion->Image ?>" style="width: 14%, text-align: center">
+    
+                    <div class="card-body">
+                    <p class="card-text"><?= $excursion->Type ?></p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="btn-group">
+                        <a href="produit.php?pdt=<?= $excursion->Excursion_id ?>"><button type="button" class="btn btn-sm btn-success">Commander</button></a>
+                        </div>
+                        <small class="text" style="font-weight: bold;"><?= $excursion->Duration_time ?> Hours</small>
+                    </div>
+                    </div>
+                </div>
+                <br>
+            </div>
+    <?php }} ?>
+    
+    </main>
+
+<table class="table table-striped table-bordered table-hover">
+    <tr><td>ID:</td><td> <%= oneExcursion.Excursion_id %> </td></tr>
+    <tr><td>Name:</td><td> <%= oneExcursion.Name %> <%= oneExcursion.Name %> </td></tr>
+    <tr><td>Type:</td><td> <%= oneExcursion.car_name %> </td></tr>
+    <tr><td>Duration time:</td><td> <%= oneExcursion.Duration_time %> </td></tr>
+    <tr><td>Place</td><td> <%= oneExcursion.Place %> </td></tr>
+</table>
+
+<%- include("partial_footers.ejs"); %>

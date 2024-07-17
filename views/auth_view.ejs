@@ -1,0 +1,25 @@
+<!-- views/auth_view.ejs  -->
+<%- include("partial_headers.ejs"); %>
+
+    <h1>Please Log In </h1>
+    <center>
+        <form class="login" method="post" action="/auth/login" >
+            <input name="username" type="username" class="form-control" id="username" placeholder="Username" required>
+            <input name="userpass" type="password" class="form-control" id="password" placeholder="Password" required>
+            <br>
+            <button type="submit" class="btn btn-dark btn-block">Login</button>
+        </form>
+        <br>
+        <a href="/auth/logout" class="btn btn-dark btn-block">LOG OUT</a> <br/>
+        <%= extraContent %>
+    </center>
+    
+
+    <%- include("partial_footers.ejs"); %>
+
+
+
+
+
+
+
